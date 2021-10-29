@@ -10,6 +10,7 @@ namespace PGLRefresher
     {
         #region Definitions
         private static string url = "http://url.here";
+        private static string url2 = "http://url.here";
         private static readonly Timer timer = new Timer();
 
         public enum ServiceState
@@ -79,9 +80,10 @@ namespace PGLRefresher
                 using (WebClient client = new WebClient())
                 {
                     string s = client.DownloadString(url);
+                    string s2 = client.DownloadString(url2);
                 }
 
-                Log.Write("PGL.txt refreshed.", Log.MessageType.INFO);
+                Log.Write("PGL.txt and PGL_Users.txt refreshed.", Log.MessageType.INFO);
             }
             catch (Exception ex)
             {
